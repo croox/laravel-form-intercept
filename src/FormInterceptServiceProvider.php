@@ -3,9 +3,11 @@
 namespace Croox\FormIntercept;
 
 use Croox\FormIntercept\Listeners\InterceptFormEmail;
+use Croox\FormIntercept\Listeners\PreventInterceptedFormStorage;
 use Illuminate\Mail\Events\MessageSending;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
+use Statamic\Events\FormSubmitted;
 
 class FormInterceptServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,6 @@ class FormInterceptServiceProvider extends ServiceProvider
         ], 'form-intercept-config');
 
         Event::listen(MessageSending::class, InterceptFormEmail::class);
+        Event::listen(FormSubmitted::class, PreventInterceptedFormStorage::class);
     }
 }

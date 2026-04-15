@@ -41,4 +41,16 @@ return [
         '--test--',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Prevent Form Storage
+    |--------------------------------------------------------------------------
+    |
+    | When enabled, intercepted form submissions will not be stored
+    | in the application's form storage (e.g. Statamic's storage/forms).
+    |
+    */
+
+    'prevent_form_storage' => env('FORM_INTERCEPT_PREVENT_STORAGE', true),
+
 ];
