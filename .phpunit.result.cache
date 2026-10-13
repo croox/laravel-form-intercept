@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"Croox\\FormIntercept\\Tests\\SearchableTextTest::test_joins_plain_values":0.003,"Croox\\FormIntercept\\Tests\\SearchableTextTest::test_flattens_array_values_from_checkboxes_and_uploads":0,"Croox\\FormIntercept\\Tests\\SearchableTextTest::test_skips_values_that_cannot_be_cast_to_string":0}}

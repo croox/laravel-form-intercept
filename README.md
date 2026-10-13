@@ -63,7 +63,16 @@ Emails without keywords pass through completely untouched.
 
 ## Usage
 
-Simply include one of the configured keywords anywhere in your form submission. For example, type `[TEST]` in the message field or subject when filling out a contact form. The email will be redirected to the configured tech email instead of the client.
+Type `[TEST]` in the **message field** when filling out a contact form. The email will be redirected to the configured tech email instead of the client.
+
+Use the message field, not just any field. The mail check only sees what the mail template renders, while the Statamic storage check (`prevent_form_storage`) looks at every field. A keyword in a field the template does not show skips storage, but the mail still goes to the client.
+
+## Tests
+
+```bash
+composer install
+composer test
+```
 
 ## How It Looks
 
