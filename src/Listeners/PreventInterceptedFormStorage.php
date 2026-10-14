@@ -2,6 +2,7 @@
 
 namespace Croox\FormIntercept\Listeners;
 
+use Croox\FormIntercept\KeywordMatcher;
 use Statamic\Events\SubmissionCreating;
 
 class PreventInterceptedFormStorage
@@ -24,13 +25,7 @@ class PreventInterceptedFormStorage
 
         $searchable = self::searchableText(collect($event->submission->data())->all());
 
-        foreach (config('form-intercept.keywords', []) as $keyword) {
-            if (stripos($searchable, $keyword) !== false) {
-                return false;
-            }
-        }
-
-        return null;
+        return KeywordMatcher::recipientFor($searchable, config('form-intercept')) === null ? null : false;
     }
 
     /**

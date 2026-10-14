@@ -35,6 +35,8 @@ Add these environment variables to your `.env`:
 ```env
 FORM_INTERCEPT_ENABLED=true
 FORM_INTERCEPT_EMAIL=tech@croox.com
+# Optional: mailbox for automated checks using [MONITOR]; falls back to FORM_INTERCEPT_EMAIL
+FORM_INTERCEPT_MONITOR_EMAIL=
 ```
 
 To customize the keywords, publish the config file:
@@ -64,6 +66,8 @@ Emails without keywords pass through completely untouched.
 ## Usage
 
 Type `[TEST]` in the **message field** when filling out a contact form. The email will be redirected to the configured tech email instead of the client.
+
+Automated checks (croox/form-monitor) use `[MONITOR]` instead. Those mails go to `FORM_INTERCEPT_MONITOR_EMAIL`, a mailbox the bot reads, so manual tests stay in the tech email. If that variable is not set, `[MONITOR]` mails go to the tech email as well.
 
 Use the message field, not just any field. The mail check only sees what the mail template renders, while the Statamic storage check (`prevent_form_storage`) looks at every field. A keyword in a field the template does not show skips storage, but the mail still goes to the client.
 

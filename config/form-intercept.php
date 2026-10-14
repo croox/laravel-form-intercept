@@ -43,6 +43,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Monitor Email and Keywords
+    |--------------------------------------------------------------------------
+    |
+    | Automated checks (croox/form-monitor) use these keywords so their mails
+    | go to a separate mailbox the bot can read, keeping manual [TEST] mails
+    | in the tech email. Without a monitor email they fall back to the tech email.
+    |
+    */
+
+    'monitor_email' => env('FORM_INTERCEPT_MONITOR_EMAIL'),
+
+    'monitor_keywords' => [
+        '[MONITOR]',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Prevent Form Storage
     |--------------------------------------------------------------------------
     |
