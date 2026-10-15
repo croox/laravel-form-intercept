@@ -9,10 +9,12 @@ return [
     |
     | When enabled, outgoing emails that contain any of the configured
     | keywords in their subject or body will be redirected to the tech email.
+    | Off unless set: otherwise a customer who happens to type a keyword
+    | would have their inquiry redirected to us and not stored.
     |
     */
 
-    'enabled' => env('FORM_INTERCEPT_ENABLED', true),
+    'enabled' => env('FORM_INTERCEPT_ENABLED', false),
 
     /*
     |--------------------------------------------------------------------------

@@ -36,6 +36,7 @@
     },
     "minimum-stability": "stable",
     "require-dev": {
-        "phpunit/phpunit": "^10.5 || ^11.0 || ^12.0 || ^13.0"
+        "phpunit/phpunit": "^10.5 || ^11.0 || ^12.0 || ^13.0",
+        "vlucas/phpdotenv": "^5.7"
     }
 }

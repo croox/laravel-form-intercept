@@ -5,7 +5,7 @@ Intercept outgoing form emails containing specific keywords and redirect them to
 ## Requirements
 
 - PHP 8.1+
-- Laravel 10, 11, or 12
+- Laravel 10, 11, 12, or 13
 
 ## Installation
 
@@ -30,7 +30,7 @@ The service provider is auto-discovered — no manual registration needed.
 
 ## Configuration
 
-Add these environment variables to your `.env`:
+The package does nothing until you enable it. Add these environment variables to your `.env`:
 
 ```env
 FORM_INTERCEPT_ENABLED=true
